@@ -11,7 +11,7 @@ public class Remittance {
 	
 	String DbtrAcnt;
 	int amt;
-	String benNm;
+	BenName_Embeddable benNm;  // class name which will get firstName and lastNmae of Beneficiary
 	String BenAcnt;
 	String BIC;
 	public String getDbtrAcnt() {
@@ -26,10 +26,13 @@ public class Remittance {
 	public void setAmt(int amt) {
 		this.amt = amt;
 	}
-	public String getBenNm() {
+		
+	
+	
+	public BenName_Embeddable getBenNm() {
 		return benNm;
 	}
-	public void setBenNm(String benNm) {
+	public void setBenNm(BenName_Embeddable benNm) {
 		this.benNm = benNm;
 	}
 	public String getBenAcnt() {
@@ -52,6 +55,8 @@ public class Remittance {
 		
 		
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "Remittance [payment_id=" + payment_id + ", DbtrAcnt=" + DbtrAcnt + ", amt=" + amt + ", benNm=" + benNm

@@ -24,7 +24,7 @@ public class FetchData
         Transaction tx =s.beginTransaction(); // to maintain ACID properties
         tx.commit();
         
-        rem=(Remittance)s.get(Remittance.class, 2);
-        System.out.println(rem);
+     //   rem=(Remittance)s.get(Remittance.class, 2);
+       // System.out.println(rem);
     }
 }

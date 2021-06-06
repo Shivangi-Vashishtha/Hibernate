@@ -14,13 +14,19 @@ public class App
 {
     public static void main( String[] args )
     {
+    	
+    	BenName_Embeddable benNm_Emb = new BenName_Embeddable();
+    	benNm_Emb.setFirstName("Saloni");
+    	benNm_Emb.setLastNmae("Jain");
+    	
+    	
         Remittance rem = new Remittance();
         
         rem.setPayment_id(3);
         rem.setDbtrAcnt("25000715"); 
         rem.setAmt(2000);
         rem.setBenAcnt("AE278000023");
-        rem.setBenNm("Shivangi");
+        rem.setBenNm(benNm_Emb);
         rem.setBIC("CITIUS33");
         
         
