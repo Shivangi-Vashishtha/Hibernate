@@ -10,28 +10,21 @@ import org.hibernate.cfg.Configuration;
  *
  */
 
-public class App 
+public class FetchData 
 {
     public static void main( String[] args )
     {
         Remittance rem = new Remittance();
-        
-        rem.setPayment_id(3);
-        rem.setDbtrAcnt("25000715"); 
-        rem.setAmt(2000);
-        rem.setBenAcnt("AE278000023");
-        rem.setBenNm("Shivangi");
-        rem.setBIC("CITIUS33");
-        
-        
+              
         Configuration con = new Configuration().configure().addAnnotatedClass(Remittance.class);
         
         // configure() is used to connect our app with hibernate.cfg.xml file else we will get error while running
         SessionFactory sf =con.buildSessionFactory();
-        Session s = sf.openSession();
-        
+        Session s = sf.openSession();      
         Transaction tx =s.beginTransaction(); // to maintain ACID properties
-        s.save(rem);
         tx.commit();
+        
+        rem=(Remittance)s.get(Remittance.class, 2);
+        System.out.println(rem);
     }
 }

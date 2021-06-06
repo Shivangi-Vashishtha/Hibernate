@@ -49,5 +49,12 @@ public class Remittance {
 	}
 	public void setPayment_id(int payment_id) {
 		this.payment_id = payment_id;
+		
+		
+	}
+	@Override
+	public String toString() {
+		return "Remittance [payment_id=" + payment_id + ", DbtrAcnt=" + DbtrAcnt + ", amt=" + amt + ", benNm=" + benNm
+				+ ", BenAcnt=" + BenAcnt + ", BIC=" + BIC + "]";
 	}
 }
